@@ -1,4 +1,4 @@
-const userID = "738748102311280681";
+const userID = "1415313297053450402";
 const elements = {
 	statusBox: document.querySelector(".status"),
 	statusImage: document.getElementById("status-image"),
