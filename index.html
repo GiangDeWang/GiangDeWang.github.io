@@ -1,191 +1,452 @@
-<!DOCTYPE>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="giangdewang | " />
-	<meta property="og:description" content="giangdewang | " />
-	<meta property="og:title" content="GiangDeWang" />
-	<meta property="og:image" content="" />
-	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://giangdewang.github.io/" />
-	<meta property="og:site_name" content="@GiangDeWang" />
-	<meta name="keywords" content="GiangDeWang,giang, giangdewang, giangbeo, giang beo" />
-	<meta property="og:image"
-		content="https://cdn.discordapp.com/attachments/953841823338618900/1193970050365919292/tumblr_5d43d3aee5d6a0f535c75ebd4654a423_0a23ad45_1280.gif" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="language" content="English" />
-	<meta name="author" content="GiangDeWang" />
-	<meta name="view-transition" content="same-origin" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet" />
-	<link rel="icon" href="./public/mahiro_flex.ico" />
-	<link rel="stylesheet" href="./styles/style.css" />
-	<link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet" crossorigin />
-	<title>GiangDeWang</title>
+<head lang="vi-VN">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile Thông Tin Thanh Toán </title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="keywords"
+        content="giangbeoios.com, blog.giangbeoios.com, api.giangbeoios.com, giangbeoios, profile giangbeoios, web giang ios, thông tin thanh toán website">
+    <meta name="description" content="Trang thông tin thanh toán, copy số tài khoản chỉ với 1 click">
+    <meta property="og:description" content="Trang thông tin thanh toán, copy số tài khoản chỉ với 1 click">
+    <meta property="og:type" content="acticle">
+    <meta property="og:locale" content="vi-VN" />
+    <meta property="og:title" content="Profile Thông Tin Thanh Toán ">
+    <link rel="shortcut icon" href="https://i.imgur.com/mruOsLm.jpg" />
+    <meta property="og:image" content="https://i.imgur.com/NopdDnz.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="./assets/styles/porn-hub.css">
+    <link id="dark-style" class="dark-theme" rel="stylesheet" href="./assets/styles/style-dark.css">
 </head>
 
-<body oncontextmenu="return true;">
-	<div class="container">
-		<div class="profile-border box-color">
-			<div class="profile box-color">
-				<div class="banner">
-					<img loading="lazy" id="banner-image" src="./public/banner.webp" alt="" />
-				</div>
-				<div class="main-header">
-					<div class="image">
-						<div class="avatar">
-							<img loading="lazy" class="box-color" id="avatar-image" alt="" aria-hidden="true"
-								src="./public/av.webp" />
-							<img loading="lazy" class="avatar-decoration" src="./public/lumine_avatar_frame.webp"
-								alt="" />
-							<div class="status box-color tooltip">
-								<img id="status-image" src="./public/status/offline.svg" alt="" />
-							</div>
-						</div>
-						<!-- </button> -->
-					</div>
-					<div class="badges box-color" id="badges">
-						<div class="badges-right">
-							<a class="tooltip" aria-label="HypeSquad Brilliance">
-								<img alt=" " src="./public/badges/hypesquad-brilliance.svg" /></a>
-							<a class="tooltip" aria-label="Active Developer">
-								<img alt=" " src="./public/badges/active-developer.svg" /></a>
-							<a class="tooltip" aria-label="Subscriber since Jan 26, 2023">
-								<img alt=" " src="./public/badges/nitro.svg" /></a>
-							<a class="tooltip" aria-label="Originally known as GiangDeWang#0001">
-								<img alt=" " src="./public/badges/legacy-username.svg" /></a>
-						</div>
-						<div class="badges-left"></div>
-						<!-- badges list-->
-						<!-- -->
-					</div>
-				</div>
-				<div class="card box-color">
-					<div class="name-box">
-						<span class="display-name">Giang</span>
-						<button class="id username" id="textToCopy" aria-label="Click to copy!"
-							onclick="copyToClipboard()"></button>
-						<span class="pronouns">Giang</span>
-						<div class="custom-status">
-							<img id="custom-status-emoji" />
-							<p class="custom-status-text"></p>
-						</div>
-					</div>
-					<div class="body">
-						<div class="content">
-							<div class="about-section">
-								<div class="title-body">ABOUT ME</div>
-								<!-- text -->
-								<span class="about-me">I'm Giang🌸 from
-									<div class="flag">
-										<img src="./public/icons/flag-for-flag-vietnam-svgrepo-com.svg" />
-									</div>
-									a Hikikomori plus NEET, and I enjoy playing video games 🎮,
-									watching anime, reading manga 🗾, and occasionally tinkering
-									with with random stuff 💻. I'm quite shy 👉👈, so it would
-									be really nice if you're the one who takes the initiative to
-									be friends with me (≩ᴗ≨).<br /><br />I'm currently the owner
-									👑 of a small
-									<a href="https://discord.com/" target="_blank"> Discord</a>
-									server called
-									<a href="https://discord.gg/FpWq76bMGA" target="_blank">N.E.E.T</a>
-									and I hope you'll join and play some games with me on
-									<a href="https://steamcommunity.com/id/GiangDeWang/" target="_blank">Steam</a>.
-								</span>
-								<!-- -->
-							</div>
-							<div class="title-body">ROLES</div>
-							<div class="roles-body">
-								<!-- roles list -->
-								<div class="rol rosepink">
-									<i class="fas fa-circle"></i>
-									<span>ニート</span>
-								</div>
-								<div class="rol softpink">
-									<i class="fas fa-circle"></i>
-									<span>Weeb Developer</span>
-								</div>
-								<div class="rol green">
-									<i class="fas fa-circle"></i>
-									<span>Gamer</span>
-								</div>
-								<div class="rol blue">
-									<i class="fas fa-circle"></i>
-									<span>ICTU Student</span>
-								</div>
-								<!-- -->
-							</div>
-							<div class="divider social-divider"></div>
-							<div class="title-body">CONNECTIONS</div>
+<body class="bg-triangles">
+    <div id="top-td"></div>
+    <div class="preloader">
+        <div class="preloader__wrap">
+            <div class="circle-pulse">
+                <div class="circle-pulse__1">
+                </div>
+                <div class="circle-pulse__2">
+                </div>
+            </div>
+            <div class="preloader__progress">
+                <span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="container gutter-top">
+            <div class="row sticky-parent">
+                <!-- Sidebar -->
+                <aside class="col-12 col-md-12 col-xl-3">
+                    <div class="sidebar box pb-0 sticky-column">
+                        <div class="text-center">
 
-							<div class="socials">
-								<!-- social list -->
-								<div class="column">
-									<a class="platform" href="http://steamcommunity.com/id/GiangDeWang/"
-										rel="noreferrer noopener" target="_blank">
-										<img class="platform-icon" alt=" " aria-hidden="true"
-											src="./public/platforms/steam.svg" />
-										<div class="text-base platform-username">
-											GiangDeWang
-										</div>
-										<div>
-											<img alt=" " id="link" aria-hidden="true" src="./public/icons/link.svg"
-												class="connect" />
-										</div>
-									</a>
-									<a class="platform" href="http://" rel="noreferrer noopener" target="_blank">
-										<img class="platform-icon" alt=" " aria-hidden="true"
-											src="./public/platforms/tiktok.svg" />
-										<div class="text-base platform-username">Mízù</div>
-										<div href="http://fb.com/GiangDeWang/" rel="noreferrer noopener"
-											target="_blank">
-											<img alt=" " id="link" aria-hidden="true" src="./public/icons/link.svg"
-												class="connect" />
-										</div>
-									</a>
-								</div>
-								<div class="column">
-									<a class="platform" href="https://github.com/GiangDeWang" rel="noreferrer noopener"
-										target="_blank">
-										<img class="platform-icon" alt=" " aria-hidden="true"
-											src="./public/platforms/github.svg" />
-										<div class="text-base platform-username">
-											GiangDeWang
-										</div>
-										<div>
-											<img alt=" " id="link" aria-hidden="true" src="./public/icons/link.svg"
-												class="connect" />
-										</div>
-									</a>
-									<a class="platform" href="https://discord.gg/FpWq76bMGA" rel="noreferrer noopener"
-										target="_blank">
-										<img class="platform-icon" alt=" " aria-hidden="true"
-											src="./public/platforms/discord.svg" />
-										<div class="text-base platform-username">
-											Discord Server
-										</div>
-										<div class="">
-											<img alt=" " id="link" aria-hidden="true" src="./public/icons/link.svg"
-												class="connect" />
-										</div>
-									</a>
-								</div>
-								<!-- -->
-							</div>
-							<div class="chat-container">
-								<input type="text" id="message-input" placeholder="Message @Mizu" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script async src="./scripts/script.js"></script>
-	<script defer src="./scripts/sub.js"></script>
+                            <!-- Avatar Container -->
+                            <div class="avatar-wrapper">
+                                <!-- Avatar Frame -->
+                                <img class="avatar-frame" src="./public/lumine_avatar_frame.webp" alt="Avatar Frame" />
+                                <!-- Main Logo -->
+                                <img class="ft-logo" src="./public/av.webp" alt="Logo" />
+                            </div>
+
+                            <!-- User Info -->
+                            <h3 class="title title--h3 sidebar__user-name td-name">
+                                <span class="weight--500 td-name">
+                                    Diêm Công Đức Giang
+                                    <img class="td-verify" src="https://i.imgur.com/L0GmCbu.png" /><br>
+                                    <div class="badge badge--gray td-bio">@GiangDeWang</div>
+                                </span>
+                            </h3>
+                            <!-- Social -->
+                        </div>
+
+                        <div class="sidebar__info box-inner box-inner--rounded">
+                            <a class="btn btn--blue-gradient navbar-brand" href="./qr-code">Quét Mã QR-Code</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content -->
+                <div class="col-12 col-md-12 col-xl-9">
+                    <div class="box pb-0">
+                        <!-- What -->
+                        <div class="box-inner pb-0">
+                            <h1 class="title title--h3 title__separate">Info Payments</h1>
+                            <div class="row">
+                                <!-- Case Item -->
+                                <div class="col-12 col-lg-6">
+                                    <div class="case-item box box__second">
+                                        <img class="case-item__icon td-img-bank"
+                                            src="https://i.ibb.co/N6xSbyqX/paypal-logo-icon-png-44635.png" alt="" />
+                                        <div>
+                                            <h3 class="title title--h5">PayPal</h3>
+                                            <p class="case-item__caption">
+                                                Gmail: ducgiang127207@gmail.com&ensp;<i
+                                                    data-copy="ducgiang127207@gmail.com" class="fa fa-copy td-copy"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Sao chép số tài khoản" onclick="copyToClipboard(this)"></i>
+                                                <br />CTK: GIANG DIEM CONG&ensp;<i data-copy="GIANG DIEM CONG"
+                                                    class="fa fa-copy td-copy" data-toggle="tooltip"
+                                                    data-placement="top" title="Sao chép số chủ tài khoản"
+                                                    onclick="copyToClipboard(this)"></i>
+                                            </p>
+
+                                            <!-- 🔥 Thêm nút chuyển tiền tại đây -->
+                                            <a href="https://paypal.me/GiangDeWang" target="_blank"
+                                                class="btn btn-primary" style="margin-top: 10px;">
+                                                💸 Chuyển tiền qua PayPal
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Item -->
+                                <!-- <div class="col-12 col-lg-6">
+                                    <div class="case-item box box__second">
+                                        <img class="case-item__icon" src="https://i.imgur.com/6AStRlN.png" alt="" />
+                                        <div>
+                                            <h3 class="title title--h5">Momo</h3>
+                                            <p class="case-item__caption">
+                                                STK: 1234xxx789&ensp;<i data-copy="1234xxx789"
+                                                    class="fa fa-copy td-copy" data-toggle="tooltip"
+                                                    data-placement="top" title="Sao chép số tài khoản"
+                                                    onclick="copyToClipboard(this)"></i>
+                                                <br />CTK: NGUYEN VAN A&ensp;<i data-copy="NGUYEN VAN A"
+                                                    class="fa fa-copy td-copy" data-toggle="tooltip"
+                                                    data-placement="top" title="Sao chép số chủ tài khoản"
+                                                    onclick="copyToClipboard(this)"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- Case Item -->
+                                <!-- <div class="col-12 col-lg-6">
+                                    <div class="case-item box box__second">
+                                        <img class="case-item__icon" src="https://i.imgur.com/CGxIJvK.png" alt="" />
+                                        <div>
+                                            <h3 class="title title--h5">Vietinbank</h3>
+                                            <p class="case-item__caption">
+                                                STK: 1234xxx789&ensp;<i data-copy="1234xxx789"
+                                                    class="fa fa-copy td-copy" data-toggle="tooltip"
+                                                    data-placement="top" title="Sao chép số tài khoản"
+                                                    onclick="copyToClipboard(this)"></i>
+                                                <br />CTK: NGUYEN VAN A&ensp;<i data-copy="NGUYEN VAN A"
+                                                    class="fa fa-copy td-copy" data-toggle="tooltip"
+                                                    data-placement="top" title="Sao chép số chủ tài khoản"
+                                                    onclick="copyToClipboard(this)"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- Case Item -->
+                                <div class="col-12 col-lg-6">
+                                    <div class="case-item box box__second">
+                                        <img class="case-item__icon" src="https://i.imgur.com/jpeOqof.png" alt="" />
+                                        <div>
+                                            <h3 class="title title--h5">Vietcombank</h3>
+                                            <p class="case-item__caption">
+                                                STK: 1044139831&ensp;
+                                                <i data-copy="1044139831" class="fa fa-copy td-copy"
+                                                    onclick="copyToClipboard(this)"></i>
+                                                <br />CTK: DIEM CONG DUC GIANG&ensp;
+                                                <i data-copy="DIEM CONG DUC GIANG" class="fa fa-copy td-copy"
+                                                    onclick="copyToClipboard(this)"></i>
+                                            </p>
+
+                                            <!-- Nút hiện QR -->
+                                            <button class="btn btn-success mt-2"
+                                                onclick="showQR('1044139831','DIEM CONG DUC GIANG')">
+                                                Hiện mã QR
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <!-- Testimonials -->
+                        <div class="box-inner box-inner--rounded">
+                            <h2 class="title title--h3 title__separate">About Me</h2>
+                            <div class="swiper-container js-carousel-review">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide review-item">
+                                        <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                                            <g class="avatar__hexagon">
+                                                <image xlink:href="https://i.imgur.com/pn00UUp.gif" height="100%"
+                                                    width="100%" />
+                                            </g>
+                                        </svg>
+                                        <h4 class="title title--h5">
+                                            <a class="td-caption" href="#">Thả Thính</a>
+                                        </h4>
+                                        <p class="review-item__caption">Tuy anh không hoàn hảo, nhưng anh là duy nhất
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide review-item">
+                                        <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                                            <g class="avatar__hexagon">
+                                                <image xlink:href="https://i.imgur.com/Nao5Nvi.png" height="100%"
+                                                    width="100%" />
+                                            </g>
+                                        </svg>
+                                        <h4 class="title title--h5">
+                                            <a class="td-caption" href="#">Châm Ngôn</a>
+                                        </h4>
+                                        <p class="review-item__caption">Nơi đây không phải thiên đình nên quý khách đừng
+                                            cho mình là thượng đế</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="box-inner box-inner--rounded">
+                            <h2 class="title title--h3 title__separate">Skill Language</h2>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="box box__second">
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                                aria-valuemin="0" aria-valuemax="60" style="width: 60%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>Design Website</span>
+                                                    <span>60%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>Design Website</span>
+                                            </div>
+                                        </div>
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                aria-valuemin="0" aria-valuemax="80" style="width: 80%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>Graphic Design</span>
+                                                    <span>80%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>Graphic Design</span>
+                                            </div>
+                                        </div>
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="50"
+                                                aria-valuemin="0" aria-valuemax="50" style="width: 50%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>Freelance Developer</span>
+                                                    <span>50%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>Freelance Developer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                                    <div class="box box__second">
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="65"
+                                                aria-valuemin="0" aria-valuemax="65" style="width: 65%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>Html5/Css/JavaScript</span>
+                                                    <span>65% </span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>HTML/Css/JavaScript</span>
+                                            </div>
+                                        </div>
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="40"
+                                                aria-valuemin="0" aria-valuemax="40" style="width: 40%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>PHP</span>
+                                                    <span>40%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>PHP</span>
+                                            </div>
+                                        </div>
+                                        <!-- Progress -->
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                                aria-valuemin="0" aria-valuemax="60" style="width: 60%; z-index: 2;">
+                                                <div class="progress-text">
+                                                    <span>ReactJS</span>
+                                                    <span>60%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-text">
+                                                <span>ReactJS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="corner-icon-container">
+                <div class="corner-icon corner-icon-moon">
+                    <a class="" data-toggle="tooltip" data-placement="left" data-original-title="Toggle Display Theme">
+                        <img height="23" width="23" src="./assets/icons/moon-td.svg" alt="Dark Mode">
+                    </a>
+                </div>
+                <div class="corner-icon corner-icon-qrcode">
+                    <a class="" data-toggle="tooltip" data-placement="left" data-original-title="Mã qr của trang này">
+                        <img height="24" width="24" src="./assets/icons/qr-code-td.svg" alt="QR Code">
+                    </a>
+                </div>
+                <div class="corner-icon corner-icon-github">
+                    <a class="" data-toggle="tooltip" data-placement="left" data-original-title="Github của tôi">
+                        <img height="20" width="20" src="./assets/icons/github-color-td.svg" alt="My github">
+                    </a>
+                </div>
+                <div class="corner-icon corner-icon-scroll" id="scrollToTop">
+                    <a class="" data-toggle="tooltip" data-placement="left">
+                        <i class="fa fa-angle-up td-scroll"></i>
+                    </a>
+                </div>
+            </div>
+            <footer style="text-transform: capitalize;" class="footer">2023 ©️ - <a id="website" href="https:/"
+                    target="_blank">From GiangDeWang️</a>
+            </footer>
+        </div>
+        </div>
+        </div>
+    </main>
+    <script src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/common.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/map.init.js"></script>
+    <script src="./assets/js/js.cookie.js"></script>
+    <script src="./assets/layui/hoa-roi.js"></script>
+    <script>
+        const Wussun_Music = ["https:/thanhdieu.com/files/random-music.php",];
+        let rand = Math.floor(Math.random() * Wussun_Music.length);
+        const audio = new Audio(Wussun_Music[rand]);
+        function wussunplay() {
+            audio.play()
+        }
+        document.addEventListener("click", wussunplay()), audio.addEventListener("ended", function () {
+            rand = (rand + 1) % Wussun_Music.length, audio.src = Wussun_Music[rand], audio.play()
+        });
+        let avatar = 'https://i.imgur.com/LmhlAUB.png';
+        let fullname = 'Diêm Công Đức Giang';
+        let facebook = 'https://www.facebook.com/com.shinblue';
+        let zalo = '0367793977';
+        window.addEventListener("DOMContentLoaded", function () {
+            window.MyNavCard = $MGC({
+                icon: `${avatar}`,
+                name: `${fullname}`,
+                info: "Chào mừng đến với profile thông tin thanh toán,tại đây bạn có thể sao chép tài khoản ngân hàng 1 cách nhanh chóng",
+                z_index: 9999,
+                blur: ".main",
+                lang: "en-US",
+                mini: false,
+                darkmode: 2,
+                maxWidth: "380px",
+                fontFamily: "",
+                closeDuration: 15000,
+                defaultClosed: false,
+                defaultLinkIcon: "fa-solid fa-paw",
+                fontawesome: {
+                    "type": "svg",
+                    "CDN": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/js/all.min.js"
+                },
+                iconLinks: [{
+                    "title": "My Github",
+                    "icon": "fa-brands fa-github",
+                }, {
+                    "title": "My Blog",
+                    "icon": "fa-brands fa-instagram"
+                },],
+                links: [{
+                    "title": "Contact Facebook",
+                    "url": `${facebook}`,
+                    "type": "primary",
+                    "target": "_blank"
+                }, {
+                    "title": "Contact Zalo",
+                    "url": `https://zalo.me/${zalo}`,
+                    "type": "primary",
+                    "target": "_blank"
+                },],
+            });
+        });
+    </script>
+    <!-- Popup QR -->
+    <div id="qrPopup"
+        style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+     background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); z-index:1001; max-width:90%; text-align:center;">
+        <span style="cursor:pointer; position:absolute; top:5px; right:10px; font-weight:bold;"
+            onclick="closeQR()">×</span>
+        <h5>Mã QR Vietcombank</h5>
+        <img id="qrImage" src="" alt="QR Code" style="width:200px; height:200px; margin-top:10px;" />
+        <br>
+        <!-- Nút lưu ảnh -->
+        <button class="btn btn-primary mt-2" onclick="downloadQR()">Tải QR về máy</button>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+     background:rgba(0,0,0,0.5); z-index:1000;" onclick="closeQR()"></div>
+
+    <script>
+        let currentQR = ''; // Lưu URL QR hiện tại
+
+        function showQR(account, name) {
+            const bankCode = 'VCB';
+            const type = 'transfer';
+            currentQR = `https://img.vietqr.io/image/${bankCode}-${account}-${type}-${name.replace(/ /g, '+')}.png`;
+
+            // Hiển thị QR
+            document.getElementById('qrImage').src = currentQR;
+
+            // Hiển thị popup và overlay
+            document.getElementById('qrPopup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeQR() {
+            document.getElementById('qrPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Hàm tải QR về máy
+        function downloadQR() {
+            if (!currentQR) return;
+
+            const link = document.createElement('a');
+            link.href = currentQR;
+            link.download = 'Vietcombank_QR.png'; // Tên file khi tải về
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
 </body>
 
 </html>
