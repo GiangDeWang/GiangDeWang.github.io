@@ -16,7 +16,7 @@
     <meta property="og:type" content="acticle">
     <meta property="og:locale" content="vi-VN" />
     <meta property="og:title" content="Profile Thông Tin Thanh Toán ">
-    <link rel="shortcut icon" href="https://i.imgur.com/mruOsLm.jpg" />
+    <link rel="shortcut icon" href="./public/av.webp" />
     <meta property="og:image" content="https://i.imgur.com/NopdDnz.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/styles/style.css" />
@@ -297,6 +297,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="corner-icon-container">
                 <div class="corner-icon corner-icon-moon">
                     <a class="" data-toggle="tooltip" data-placement="left" data-original-title="Toggle Display Theme">
@@ -474,29 +475,38 @@
             document.getElementById('overlay').style.display = 'none';
         }
 
-        // Hàm tải QR về máy bằng fetch + Blob
+        // Hàm tải QR về máy, tương thích iOS Safari
         function downloadQR() {
             if (!currentQR) return;
 
-            fetch(currentQR)
-                .then(response => {
-                    if (!response.ok) throw new Error('Không thể tải ảnh.');
-                    return response.blob();
-                })
-                .then(blob => {
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'Vietcombank_QR.png'; // Tên file khi tải về
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(url); // giải phóng bộ nhớ
-                })
-                .catch(err => {
-                    console.error('Lỗi tải QR:', err);
-                    alert('Không thể tải QR. Vui lòng thử lại.');
-                });
+            const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent);
+
+            if (isIOS) {
+                // iOS Safari: mở ảnh trong tab mới, người dùng tự lưu
+                window.open(currentQR, '_blank');
+                alert('Trên iPhone/Safari, giữ ảnh và chọn "Lưu ảnh" để tải về.');
+            } else {
+                // PC và trình duyệt khác: fetch + blob để tải
+                fetch(currentQR)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Không thể tải ảnh.');
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = 'Vietcombank_QR.png'; // Tên file khi tải về
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url); // giải phóng bộ nhớ
+                    })
+                    .catch(err => {
+                        console.error('Lỗi tải QR:', err);
+                        alert('Không thể tải QR. Vui lòng thử lại.');
+                    });
+            }
         }
     </script>
 
