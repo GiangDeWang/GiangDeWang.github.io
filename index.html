@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="./assets/styles/porn-hub.css">
     <link id="dark-style" class="dark-theme" rel="stylesheet" href="./assets/styles/style-dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-triangles">
@@ -305,10 +307,9 @@
                     </a>
                 </div>
 
-                <div class="corner-icon corner-icon-github">
-                    <a class="" data-toggle="tooltip" data-placement="left" data-original-title="Github của tôi">
-                        <img height="20" width="20" src="./assets/icons/github-color-td.svg" alt="My github">
-                    </a>
+                <div class="corner-icon corner-icon-github" id="music-toggle" style="cursor:pointer;">
+                    <i id="music-icon" class="fa-solid fa-volume-xmark" data-toggle="tooltip" data-placement="left"
+                        title="Bật/Tắt nhạc"></i>
                 </div>
                 <div class="corner-icon corner-icon-scroll" id="scrollToTop">
                     <a class="" data-toggle="tooltip" data-placement="left">
@@ -323,6 +324,7 @@
         </div>
         </div>
     </main>
+
     <script src="./assets/js/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
@@ -381,14 +383,35 @@
     </script>
 
     <script>
-        const Wussun_Music = ["https://files.catbox.moe/0phija.mp3",];
+        const Wussun_Music = ["https://files.catbox.moe/0phija.mp3"];
         let rand = Math.floor(Math.random() * Wussun_Music.length);
         const audio = new Audio(Wussun_Music[rand]);
+        let isPlaying = false; // trạng thái nhạc
+
         function wussunplay() {
-            audio.play()
+            const icon = document.getElementById("music-icon");
+            if (!isPlaying) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    icon.classList.remove("fa-volume-xmark");
+                    icon.classList.add("fa-volume-high");
+                }).catch(err => {
+                    console.log("Không phát được nhạc:", err);
+                });
+            } else {
+                audio.pause();
+                isPlaying = false;
+                icon.classList.remove("fa-volume-high");
+                icon.classList.add("fa-volume-xmark");
+            }
         }
-        document.addEventListener("click", wussunplay()), audio.addEventListener("ended", function () {
-            rand = (rand + 1) % Wussun_Music.length, audio.src = Wussun_Music[rand], audio.play()
+
+        document.getElementById("music-toggle").addEventListener("click", wussunplay);
+
+        audio.addEventListener("ended", function () {
+            rand = (rand + 1) % Wussun_Music.length;
+            audio.src = Wussun_Music[rand];
+            if (isPlaying) audio.play();
         });
         let avatar = './public/av.webp';
         let fullname = 'Diêm Công Đức Giang';
