@@ -334,38 +334,43 @@
     <script src="./assets/js/map.init.js"></script>
     <script src="./assets/js/js.cookie.js"></script>
     <script src="./assets/layui/hoa-roi.js"></script>
-    <script src="./assets/fo-devtool.js"></script>
-    <script>
-        // Chặn DevTools ngay khi trang bắt đầu tải
-        (function () {
-            const redirectURL = '//example.com'; // URL chuyển hướng nếu phát hiện DevTools
+<script src="./assets/fo-devtool.js"></script>
+<script>
+    (function () {
+        const redirectURL = '//example.com'; // URL chuyển hướng nếu phát hiện DevTools
 
-            function isDevToolsOpen() {
-                // Kiểm tra chiều rộng và chiều cao để phát hiện DevTools
-                const threshold = 160; // ngưỡng pixel
-                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-                return widthThreshold || heightThreshold;
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
+        function isDevToolsOpen() {
+            if (isMobile()) {
+                // Bỏ qua kiểm tra trên thiết bị di động
+                return false;
             }
+            const threshold = 160; // ngưỡng pixel
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            return widthThreshold || heightThreshold;
+        }
 
-            function blockDevTools() {
-                if (isDevToolsOpen()) {
-                    console.warn('Phát hiện DevTools! Chuyển hướng...');
-                    window.location.href = redirectURL;
-                }
+        function blockDevTools() {
+            if (isDevToolsOpen()) {
+                console.warn('Phát hiện DevTools! Chuyển hướng...');
+                window.location.href = redirectURL;
             }
+        }
 
-            // Kiểm tra ngay lập tức
+        // Chỉ kiểm tra DevTools trên PC
+        if (!isMobile()) {
             blockDevTools();
-
-            // Kiểm tra liên tục mỗi 200ms phòng trường hợp DevTools mở sau khi trang tải
             setInterval(blockDevTools, 200);
-        })();
+        }
 
-        // Khởi tạo lớp FuckDevtool hiện tại
+        // Khởi tạo FuckDevtool (nếu có lib fo-devtool.js)
         const Config = new FuckDevtool({
             interval: 200,
-            redirectURL: '//example.com',
+            redirectURL: redirectURL,
             debug: true,
             preventDevTools: true,
             checkBrowser: true,
@@ -373,7 +378,8 @@
             checkShortcuts: true
         });
         Config.init();
-    </script>
+    })();
+</script>
 
     <script>
         const Wussun_Music = ["https://files.catbox.moe/0phija.mp3",];
