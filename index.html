@@ -336,12 +336,19 @@
     <script src="./assets/layui/hoa-roi.js"></script>
     <script src="./assets/fo-devtool.js"></script>
     <script>
-        // Chặn DevTools ngay khi trang bắt đầu tải
         (function () {
             const redirectURL = '//example.com'; // URL chuyển hướng nếu phát hiện DevTools
 
+            function isMobileOrSafari() {
+                return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                    || /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            }
+
             function isDevToolsOpen() {
-                // Kiểm tra chiều rộng và chiều cao để phát hiện DevTools
+                if (isMobileOrSafari()) {
+                    // Trên iPhone/iPad Safari bỏ qua check DevTools
+                    return false;
+                }
                 const threshold = 160; // ngưỡng pixel
                 const widthThreshold = window.outerWidth - window.innerWidth > threshold;
                 const heightThreshold = window.outerHeight - window.innerHeight > threshold;
@@ -355,24 +362,24 @@
                 }
             }
 
-            // Kiểm tra ngay lập tức
-            blockDevTools();
+            // Chỉ chạy chặn DevTools trên PC (không chạy iPhone/iPad Safari)
+            if (!isMobileOrSafari()) {
+                blockDevTools();
+                setInterval(blockDevTools, 200);
+            }
 
-            // Kiểm tra liên tục mỗi 200ms phòng trường hợp DevTools mở sau khi trang tải
-            setInterval(blockDevTools, 200);
+            // Khởi tạo FuckDevtool (nếu bạn muốn dùng lib này)
+            const Config = new FuckDevtool({
+                interval: 200,
+                redirectURL: redirectURL,
+                debug: true,
+                preventDevTools: true,
+                checkBrowser: true,
+                enableDebugger: true,
+                checkShortcuts: true
+            });
+            Config.init();
         })();
-
-        // Khởi tạo lớp FuckDevtool hiện tại
-        const Config = new FuckDevtool({
-            interval: 200,
-            redirectURL: '//example.com',
-            debug: true,
-            preventDevTools: true,
-            checkBrowser: true,
-            enableDebugger: true,
-            checkShortcuts: true
-        });
-        Config.init();
     </script>
 
     <script>
@@ -467,18 +474,32 @@
             document.getElementById('overlay').style.display = 'none';
         }
 
-        // Hàm tải QR về máy
+        // Hàm tải QR về máy bằng fetch + Blob
         function downloadQR() {
             if (!currentQR) return;
 
-            const link = document.createElement('a');
-            link.href = currentQR;
-            link.download = 'Vietcombank_QR.png'; // Tên file khi tải về
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            fetch(currentQR)
+                .then(response => {
+                    if (!response.ok) throw new Error('Không thể tải ảnh.');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'Vietcombank_QR.png'; // Tên file khi tải về
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url); // giải phóng bộ nhớ
+                })
+                .catch(err => {
+                    console.error('Lỗi tải QR:', err);
+                    alert('Không thể tải QR. Vui lòng thử lại.');
+                });
         }
     </script>
+
 
 </body>
 
