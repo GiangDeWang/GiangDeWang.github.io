@@ -68,9 +68,35 @@
                             <!-- Social -->
                         </div>
 
-                        <div class="sidebar__info box-inner box-inner--rounded">
-                            <a class="btn btn--blue-gradient navbar-brand" href="./qr-code">Quét Mã QR-Code</a>
+                        <div class="sidebar__info box-inner box-inner--rounded"
+                            style="display: flex; flex-direction: column; gap: 10px; padding: 15px;">
+                            <!-- Zalo web chuẩn, chắc chắn nhấn được -->
+                            <a class="btn btn--blue-gradient navbar-brand" href="https://chat.zalo.me/0367793977"
+                                target="_blank"
+                                style="text-align: center; padding: 10px; border-radius: 8px; color: white; text-decoration: none;">
+                                Zalo
+                            </a>
+
+                            <a class="btn btn--green-gradient navbar-brand" href="tel:+84367793977"
+                                style="text-align: center; padding: 10px; border-radius: 8px; color: white; text-decoration: none;">
+                                SĐT
+                            </a>
+
+                            <a class="btn btn--blue-gradient navbar-brand" href="https://facebook.com/com.shinblue"
+                                target="_blank"
+                                style="text-align: center; padding: 10px; border-radius: 8px; color: white; text-decoration: none;">
+                                Facebook
+                            </a>
+
+                            <a class="btn btn--pink-gradient navbar-brand" href="https://www.tiktok.com/@chonbeoooo"
+                                target="_blank"
+                                style="text-align: center; padding: 10px; border-radius: 8px; color: white; text-decoration: none;">
+                                TikTok
+                            </a>
+
+
                         </div>
+
                     </div>
                 </aside>
 
@@ -342,6 +368,47 @@
     <script src="./assets/js/map.init.js"></script>
     <script src="./assets/js/js.cookie.js"></script>
     <script src="./assets/layui/hoa-roi.js"></script>
+    <script src="./assets/fo-devtool.js"></script>
+    <script>
+        // Chặn DevTools ngay khi trang bắt đầu tải
+        (function () {
+            const redirectURL = '//example.com'; // URL chuyển hướng nếu phát hiện DevTools
+
+            function isDevToolsOpen() {
+                // Kiểm tra chiều rộng và chiều cao để phát hiện DevTools
+                const threshold = 160; // ngưỡng pixel
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                return widthThreshold || heightThreshold;
+            }
+
+            function blockDevTools() {
+                if (isDevToolsOpen()) {
+                    console.warn('Phát hiện DevTools! Chuyển hướng...');
+                    window.location.href = redirectURL;
+                }
+            }
+
+            // Kiểm tra ngay lập tức
+            blockDevTools();
+
+            // Kiểm tra liên tục mỗi 200ms phòng trường hợp DevTools mở sau khi trang tải
+            setInterval(blockDevTools, 200);
+        })();
+
+        // Khởi tạo lớp FuckDevtool hiện tại
+        const Config = new FuckDevtool({
+            interval: 200,
+            redirectURL: '//example.com',
+            debug: true,
+            preventDevTools: true,
+            checkBrowser: true,
+            enableDebugger: true,
+            checkShortcuts: true
+        });
+        Config.init();
+    </script>
+
     <script>
         const Wussun_Music = ["https:/thanhdieu.com/files/random-music.php",];
         let rand = Math.floor(Math.random() * Wussun_Music.length);
