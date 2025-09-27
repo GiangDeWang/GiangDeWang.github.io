@@ -339,13 +339,14 @@
     (function () {
         const redirectURL = '//example.com'; // URL chuyển hướng nếu phát hiện DevTools
 
-        function isMobile() {
-            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        function isMobileOrSafari() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                || /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         }
 
         function isDevToolsOpen() {
-            if (isMobile()) {
-                // Bỏ qua kiểm tra trên thiết bị di động
+            if (isMobileOrSafari()) {
+                // Trên iPhone/iPad Safari bỏ qua check DevTools
                 return false;
             }
             const threshold = 160; // ngưỡng pixel
@@ -361,13 +362,13 @@
             }
         }
 
-        // Chỉ kiểm tra DevTools trên PC
-        if (!isMobile()) {
+        // Chỉ chạy chặn DevTools trên PC (không chạy iPhone/iPad Safari)
+        if (!isMobileOrSafari()) {
             blockDevTools();
             setInterval(blockDevTools, 200);
         }
 
-        // Khởi tạo FuckDevtool (nếu có lib fo-devtool.js)
+        // Khởi tạo FuckDevtool (nếu bạn muốn dùng lib này)
         const Config = new FuckDevtool({
             interval: 200,
             redirectURL: redirectURL,
